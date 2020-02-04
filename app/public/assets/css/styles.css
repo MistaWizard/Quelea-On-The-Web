@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+body.noScroll { /* ...or body.dialogShowing */
+    overflow: hidden;
+}
+
+#liveLyrics {
+    font-size: 10vh;
+    /* font-size: 5vw; */
+    /* font-size: 5vmax; */
+    min-height: 100%;
+}

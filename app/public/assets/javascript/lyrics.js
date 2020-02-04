@@ -1,6 +1,6 @@
-// $(document).ready(function() {
 let xmlhttp;
 let currentText = "";
+let lyricsText = "";
 
 function theWhole() {
     setInterval(function () {
@@ -72,7 +72,10 @@ function runIt() {
     const queryURL = "lyricsApi/lyrics";
 
     $.get(queryURL, function (data) {
-        console.log(data);
+        // console.log(data);
+        lyricsText = data;
+        console.log("Here are the lyrics:" + lyricsText);
+        $("#liveLyrics").html(lyricsText);
     });
     // console.log(queryURL);
     // xmlhttp.open("GET", queryURL, true);
@@ -98,4 +101,3 @@ function runIt() {
 };
 
 theWhole();
-// })
