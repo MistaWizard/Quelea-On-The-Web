@@ -60,7 +60,7 @@ function getLiveText()
 
         }
     }
-    livetext.open("GET", "http://localhost:1111/livetext", true); // livetext
+    livetext.open("GET", "lyricsApi/livetext", true); // livetext
     livetext.timeout = 4000;
     livetext.ontimeout = function () {
         document.getElementById("child").innerHTML = "";
@@ -69,11 +69,11 @@ function getLiveText()
 };
 
 function runIt() {
-    const queryURL = "http://localhost:1111/lyrics";
+    const queryURL = "lyricsApi/lyrics";
 
-    // $.get(queryURL, function (data) {
-    //     console.log(data);
-    // });
+    $.get(queryURL, function (data) {
+        console.log(data);
+    });
     // console.log(queryURL);
     // xmlhttp.open("GET", queryURL, true);
     // console.log(xmlhttp);
@@ -83,18 +83,18 @@ function runIt() {
     // }
     // xmlhttp.send();
     // Calling Ajax
-    $.ajax({
-        url: queryURL, 
-        method: "GET",
-        dataType: "xml",
+    // $.ajax({
+    //     url: queryURL, 
+    //     method: "GET",
+    //     dataType: "xml",
 
-        error: function (e) {
-        //     alert("An error occurred while processing XML file");
-            console.log("XML reading Failed: ", e);
-        },
-    }).done(function(response) {
-        console.log(response);
-    });
+    //     error: function (e) {
+    //     //     alert("An error occurred while processing XML file");
+    //         console.log("XML reading Failed: ", e);
+    //     },
+    // }).done(function(response) {
+    //     console.log(response);
+    // });
 };
 
 theWhole();
