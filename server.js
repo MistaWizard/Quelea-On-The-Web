@@ -4,8 +4,7 @@ const apiProxy = httpProxy.createProxyServer();
 const bodyParser = require("body-parser");
 const path = require("path");
 const methodOverride = require("method-override");
-const rcApi = 'http://192.168.1.83:1112',
-      lyricsApi = 'http://192.168.1.83:1111';
+const config = require("./config.js");
 
 
 const app = express();
@@ -18,16 +17,16 @@ app.use(bodyParser.json({type:"application/vnd.api+json"}));
 
 app.use(methodOverride("_method"));
 
-app.use(express.static("app/public"));
+app.use(express.static("./app/public"));
 
 app.all("/rcApi/*", function(req, res) {
     console.log("redirecting to Remote Control API");
-    apiProxy.web(req, res, {target: rcApi});
+    apiProxy.web(req, res, {target: config.rcApi});
 });
 
 app.all("/lyricsApi/*", function(req, res) {
     console.log("redirecting to Lyrics API");
-    apiProxy.web(req, res, {target: lyricsApi});
+    apiProxy.web(req, res, {target: config.lyricsApi});
 });
 
 require("./app/routing/htmlRoutes.js")(app);

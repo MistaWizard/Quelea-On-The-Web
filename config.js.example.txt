@@ -1,0 +1,9 @@
+const config = {
+    // REMOTE CONTROL API
+    rcApi = 'http://YourIPHere:1112',
+
+    // LIVE LYRICS API
+    lyricsApi = 'http://YourIPHere:1111'
+};
+
+module.exports = config;
