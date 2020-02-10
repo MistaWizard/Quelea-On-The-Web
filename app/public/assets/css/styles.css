@@ -2,16 +2,20 @@ body {
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
-}
-
-body.noScroll { /* ...or body.dialogShowing */
+    background-color: green;
+    height: auto;
     overflow: hidden;
+    font-size: 2vmin;
 }
 
 #liveLyrics {
-    font-size: 10vh;
-    /* font-size: 5vw; */
-    /* font-size: 5vmax; */
+    position: relative;
     min-height: 100%;
-    transition: color .5s ease 0s, opacity 0.5s linear;
+    font-family: 'Roboto', sans-serif;
+    /* font-weight: bolder; */
+	font-size: 5em;
+    color: white;
+    text-shadow: 2px 2px 9px black;
+    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    overflow: hidden;
 }
