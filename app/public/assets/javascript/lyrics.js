@@ -6,66 +6,6 @@ function theWhole() {
     setInterval(function () {
         runIt();
     }, 500);
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function ()
-    {
-        if (xmlhttp.readyState === 4 && xmlhttp.status === 200)
-        {
-            if (xmlhttp.responseText !== "")
-            {
-                if (currentText != xmlhttp.responseText) {
-                    document.getElementById("child").innerHTML = xmlhttp.responseText;
-                    currentText = xmlhttp.responseText;
-                }
-            } 
-            else
-            {
-                getLiveText();
-            }
-            shrink();
-        }
-    }
-};
-
-function shrink()
-{
-    let textDiv = document.getElementById("dynamicDiv");
-    textDiv.style.fontSize = "200px";
-    let size = 200;
-//                var style = window.getComputedStyle(textDiv, null).getPropertyValue('font-size');
-//                var fontSize = parseFloat(style);
-    while (document.body.clientHeight > window.innerHeight)
-    {
-        size = size - 5;
-        textDiv.style.fontSize = (size) + "px";
-    }
-    while (dynamicDiv.scrollWidth > document.body.clientWidth)
-    {
-        size = size - 5;
-        textDiv.style.fontSize = (size) + "px";
-    }
-};
-
-function getLiveText()
-{
-    let livetext;
-    livetext = new XMLHttpRequest();
-    livetext.onreadystatechange = function ()
-    {
-        if (livetext.readyState === 4 && livetext.status === 200)
-        {
-            if (livetext.responseText != currentText) {
-                document.getElementById("child").innerHTML = livetext.responseText;
-            }
-
-        }
-    }
-    livetext.open("GET", "lyricsApi/livetext", true); // livetext
-    livetext.timeout = 4000;
-    livetext.ontimeout = function () {
-        document.getElementById("child").innerHTML = "";
-    }
-    livetext.send();
 };
 
 function runIt() {
@@ -73,18 +13,15 @@ function runIt() {
 
     $.get(queryURL, function (data) {
         // console.log(data);
-        lyricsText = data;
-        console.log("Here are the lyrics:" + lyricsText);
-        $("#liveLyrics").html(lyricsText);
+        if (lyricsText === data) {
+            console.log("No change is good change");
+        }
+        else {
+            lyricsText = data;
+            console.log("Here are the lyrics:" + lyricsText);
+            $("#liveLyrics").html(lyricsText);
+        }
     });
-    // console.log(queryURL);
-    // xmlhttp.open("GET", queryURL, true);
-    // console.log(xmlhttp);
-    // xmlhttp.timeout = 4000;
-    // xmlhttp.ontimeout = function () {
-    //     document.getElementById("child").innerHTML = "";
-    // }
-    // xmlhttp.send();
     // Calling Ajax
     // $.ajax({
     //     url: queryURL, 

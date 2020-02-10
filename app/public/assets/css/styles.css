@@ -13,4 +13,5 @@ body.noScroll { /* ...or body.dialogShowing */
     /* font-size: 5vw; */
     /* font-size: 5vmax; */
     min-height: 100%;
+    transition: color .5s ease 0s, opacity 0.5s linear;
 }

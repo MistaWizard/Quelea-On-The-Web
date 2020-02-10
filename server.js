@@ -4,8 +4,8 @@ const apiProxy = httpProxy.createProxyServer();
 const bodyParser = require("body-parser");
 const path = require("path");
 const methodOverride = require("method-override");
-const rcApi = 'http://localhost:1112',
-      lyricsApi = 'http://localhost:1111';
+const rcApi = 'http://192.168.1.83:1112',
+      lyricsApi = 'http://192.168.1.83:1111';
 
 
 const app = express();
