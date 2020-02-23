@@ -1,8 +1,7 @@
-// let currentText = "";
 // let lyricsText = "";
 
 function theWhole() {
-    setInterval(function () {
+    setInterval(() => {
         runIt();
     }, 500);
 };
@@ -27,7 +26,7 @@ function runIt() {
         url: queryURL, 
         method: "GET",
 
-    }).done(function(data) {
+    }).done((data) => {
         console.log(data);
 
         let lyricsText = document.getElementById("liveLyrics");
@@ -63,7 +62,7 @@ function runIt() {
         //     $("#liveLyrics").html(lyricsText);
         // }
 
-    }).catch(function(error) {
+    }).catch((error) => {
         console.log(error);
     });
 };
