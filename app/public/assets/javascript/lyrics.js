@@ -1,12 +1,12 @@
 // let lyricsText = "";
 
-function theWhole() {
+theWhole = () => {
     setInterval(() => {
         runIt();
     }, 500);
 };
 
-function runIt() {
+runIt = () => {
     const queryURL = "lyricsApi/lyrics";
 
     // $.get(queryURL, function (data) {
