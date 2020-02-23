@@ -1,11 +1,13 @@
 // let lyricsText = "";
 
+// Main function that repeats ever 500ms
 theWhole = () => {
     setInterval(() => {
         runIt();
     }, 500);
 };
 
+// Function to connect to Quelea Lyrics API
 runIt = () => {
     const queryURL = "lyricsApi/lyrics";
 
@@ -41,7 +43,7 @@ runIt = () => {
                     setTimeout(() => {
                         lyricsText.innerHTML = data;
                         lyricsText.style.opacity = "1";
-                    }, 200);
+                    }, 300);
                 }
                 else if (lyricsText.innerHTML = data) {
                     console.log("No change is good change");
@@ -67,4 +69,5 @@ runIt = () => {
     });
 };
 
+// Run the whole process
 theWhole();

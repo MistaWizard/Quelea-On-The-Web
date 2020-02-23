@@ -18,7 +18,7 @@ body {
     font-size: 5em;
     letter-spacing: 0.2rem;
     color: white;
-    /* transition: opacity 200ms ease-in-out; */
+    /* transition: opacity 300ms ease-in-out; */
     text-shadow: 
         -3px -3px 0px #000,
         -1px -3px 0px #000,
@@ -37,4 +37,8 @@ body {
         -3px  0px 0px #000,
         -3px -1px 0px #000;
     overflow: hidden;
+}
+
+.bible {
+    padding: 10%;
 }
