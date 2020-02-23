@@ -9,13 +9,32 @@ body {
 }
 
 #liveLyrics {
+    padding-top: 2%;
+    padding-bottom: 2%;
     position: relative;
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
-    /* font-weight: bolder; */
-	font-size: 5em;
+    font-weight: normal;
+    font-size: 5em;
+    letter-spacing: 0.2rem;
     color: white;
-    text-shadow: 2px 2px 9px black;
-    /* text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; */
+    /* transition: opacity 200ms ease-in-out; */
+    text-shadow: 
+        -3px -3px 0px #000,
+        -1px -3px 0px #000,
+         0px -3px 0px #000,
+         1px -3px 0px #000,
+         3px -3px 0px #000,
+         3px -1px 0px #000,
+         3px  0px 0px #000,
+         3px  1px 0px #000,
+         3px  3px 0px #000,
+         1px  3px 0px #000,
+         0px  3px 0px #000,
+        -1px  3px 0px #000,
+        -3px  3px 0px #000,
+        -3px  1px 0px #000,
+        -3px  0px 0px #000,
+        -3px -1px 0px #000;
     overflow: hidden;
 }

@@ -19,14 +19,18 @@ app.use(methodOverride("_method"));
 
 app.use(express.static("./app/public"));
 
-app.all("/rcApi/*", function(req, res) {
+app.all("/rcApi/*", function(req, res, error) {
     console.log("redirecting to Remote Control API");
     apiProxy.web(req, res, {target: config.rcApi});
 });
 
-app.all("/lyricsApi/*", function(req, res) {
+app.all("/lyricsApi/*", function(req, res, error) {
     console.log("redirecting to Lyrics API");
     apiProxy.web(req, res, {target: config.lyricsApi});
+});
+
+process.on('uncaughtException', function (err) {
+    console.log(err);
 });
 
 require("./app/routing/htmlRoutes.js")(app);
