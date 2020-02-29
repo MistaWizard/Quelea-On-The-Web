@@ -2,7 +2,7 @@ body {
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: green;
+    background-color: black;
     height: auto;
     overflow: hidden;
     font-size: 2vmin;
@@ -19,7 +19,7 @@ body {
     letter-spacing: 0.2rem;
     color: white;
     /* transition: opacity 300ms 300ms; */
-    text-shadow: 
+    /* text-shadow: 
         -3px -3px 0px #000,
         -1px -3px 0px #000,
          0px -3px 0px #000,
@@ -35,10 +35,10 @@ body {
         -3px  3px 0px #000,
         -3px  1px 0px #000,
         -3px  0px 0px #000,
-        -3px -1px 0px #000;
+        -3px -1px 0px #000; */
     overflow: hidden;
 }
 
 .bible {
-    padding: 10%;
+    padding: 5%;
 }

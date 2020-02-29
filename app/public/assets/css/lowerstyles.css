@@ -40,5 +40,9 @@ body {
 }
 
 .bible {
-    padding: 10%;
+    padding: 5%;
+}
+
+sup {
+    padding-right: 2%;
 }
