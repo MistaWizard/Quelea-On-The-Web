@@ -15,7 +15,6 @@ runIt = () => {
     $.ajax({
         url: queryURL, 
         method: "GET",
-        // dataType: "xml",
 
     }).done((data) => {
         console.log(data);
