@@ -15,9 +15,10 @@ body {
     position: relative;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    font-size: 9vh;
+    font-size: 9vmin;
     letter-spacing: 0.2rem;
     color: white;
+    /* word-wrap: break-word; */
     /* transition: opacity 300ms 300ms; */
     /* text-shadow: 
         -2px -2px 0px #000,
