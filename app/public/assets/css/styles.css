@@ -1,44 +1,45 @@
 body {
-    text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
-    background-color: green;
+    background-color: black;
     height: auto;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
-    font-size: 2vmin;
 }
 
-#liveLyrics {
-    padding-top: 2%;
-    padding-bottom: 2%;
+#links {
+    margin: auto;
+    padding: 2% 0;
+    text-align: center;
+    /* vertical-align: middle; */
+    width: 80%;
     position: relative;
-    min-height: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    font-size: 5em;
+    font-size: 9vh;
     letter-spacing: 0.2rem;
     color: white;
     /* transition: opacity 300ms 300ms; */
-    text-shadow: 
-        -3px -3px 0px #000,
-        -1px -3px 0px #000,
-         0px -3px 0px #000,
-         1px -3px 0px #000,
-         3px -3px 0px #000,
-         3px -1px 0px #000,
-         3px  0px 0px #000,
-         3px  1px 0px #000,
-         3px  3px 0px #000,
-         1px  3px 0px #000,
-         0px  3px 0px #000,
-        -1px  3px 0px #000,
-        -3px  3px 0px #000,
-        -3px  1px 0px #000,
-        -3px  0px 0px #000,
-        -3px -1px 0px #000;
-    overflow: hidden;
+    /* text-shadow: 
+        -2px -2px 0px #000,
+        -1px -2px 0px #000,
+         0px -2px 0px #000,
+         1px -2px 0px #000,
+         2px -2px 0px #000,
+         2px -1px 0px #000,
+         2px  0px 0px #000,
+         2px  1px 0px #000,
+         2px  2px 0px #000,
+         1px  2px 0px #000,
+         0px  2px 0px #000,
+        -1px  2px 0px #000,
+        -2px  2px 0px #000,
+        -2px  1px 0px #000,
+        -2px  0px 0px #000,
+        -2px -1px 0px #000; */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
 }
 
-.bible {
-    padding: 10%;
+sup {
+    padding: 2%;
+    font-size: 0.8em;
 }
