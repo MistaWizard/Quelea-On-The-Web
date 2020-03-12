@@ -58,7 +58,7 @@ runIt = () => {
         }
         else {
             if (data === "") {
-                $("#liveLyrics").fadeOut(300, function(){
+                $("#liveLyrics").fadeOut(300, () => {
                     $(this).empty().show();
                 });
                 lyricsText = data;
@@ -66,8 +66,9 @@ runIt = () => {
             else {
                 if (lyricsText === "") {
                     lyricsText = data;
+                    $("#liveLyrics").hide();
                     $("#liveLyrics").html(lyricsText);
-                    $("#liveLyrics").fadeIn(300, function() {
+                    $("#liveLyrics").fadeIn(300, () => {
                         console.log(this);
                     });
                 }
