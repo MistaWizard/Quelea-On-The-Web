@@ -19,51 +19,22 @@ runIt = () => {
     }).done((data) => {
         console.log(data);
 
-        // let lyricsDiv = document.getElementById("liveLyrics");
-
-        // if (data !== null) {
-        //     if (data === "") {
-        //         // lyricsDiv.style.opacity = "0";
-        //         $("#liveLyrics").css("opacity", "0");
-        //     }
-        //     else {
-        //         if (lyricsText === data) {
-        //         console.log("No change is good change");
-        //         // lyricsDiv.style.opacity = "1";
-        //         $("#liveLyrics").css("opacity", "1");
-        //         }
-        //         // else if (lyricsDiv.innerhtml === "") {
-        //         else if ($("#liveLyrics").html() === "") {
-        //             // lyricsDiv.style.opacity = "0";
-        //             $("#liveLyrics").css("opacity", "0");
-        //             setTimeout(() => {
-        //                 lyricsText = data;
-        //                 $("#liveLyrics").html(lyricsText);
-        //                 // lyricsDiv.style.opacity = "1";
-        //                 $("#liveLyrics").css("opacity", "1");
-        //             }, 300);
-        //         }
-        //         else {
-        //             lyricsText = data;
-        //             console.log("Here are the lyrics:" + lyricsText);
-        //             $("#liveLyrics").html(lyricsText);
-        //             // lyricsDiv.style.opacity = "1";
-        //             $("#liveLyrics").css("opacity", "1");
-        //         }
-        //     }
-        // }
-
+        // Checking if our latest data is the same as what we already have
         if (lyricsText === data) {
             console.log("No change is good change");
         }
+        // Proceed if data is different than what is currently set
         else {
+            // FadeOut if the newest data is empty
             if (data === "") {
                 $("#liveLyrics").fadeOut(300, () => {
                     $(this).empty().show();
                 });
                 lyricsText = data;
             }
+            // Proceed if newest data isn't empty
             else {
+                // Update and FadeIn if #liveLyrics div is empty
                 if (lyricsText === "") {
                     lyricsText = data;
                     $("#liveLyrics").hide();
@@ -72,6 +43,7 @@ runIt = () => {
                         console.log(this);
                     });
                 }
+                // Update #liveLyrics div with newest data
                 else {
                     lyricsText = data;
                     console.log("Here are the lyrics:" + lyricsText);
@@ -80,6 +52,7 @@ runIt = () => {
             }
         }
 
+    // Catch any errors that occur
     }).catch((error) => {
         console.log(error);
     });
