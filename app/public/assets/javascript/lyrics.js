@@ -57,9 +57,26 @@ runIt = () => {
             console.log("No change is good change");
         }
         else {
-            lyricsText = data;
-            console.log("Here are the lyrics:" + lyricsText);
-            $("#liveLyrics").html(lyricsText);
+            if (data === "") {
+                $("#liveLyrics").fadeOut(300, function(){
+                    $(this).empty().show();
+                });
+                lyricsText = data;
+            }
+            else {
+                if (lyricsText === "") {
+                    lyricsText = data;
+                    $("#liveLyrics").html(lyricsText);
+                    $("#liveLyrics").fadeIn(300, function() {
+                        console.log(this);
+                    });
+                }
+                else {
+                    lyricsText = data;
+                    console.log("Here are the lyrics:" + lyricsText);
+                    $("#liveLyrics").html(lyricsText);
+                }
+            }
         }
 
     }).catch((error) => {
