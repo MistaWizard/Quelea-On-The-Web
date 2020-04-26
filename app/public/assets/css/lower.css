@@ -15,8 +15,9 @@ body {
     position: relative;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    font-size: 9vmin;
+    /* font-size: 9vmin; */
     letter-spacing: 0.2rem;
+    line-height: 1.1;
     color: white;
     /* word-wrap: break-word; */
     /* transition: opacity 300ms 300ms; */
@@ -38,6 +39,14 @@ body {
         -2px  0px 0px #000,
         -2px -1px 0px #000; */
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+}
+
+.lyric {
+    font-size: 10vmin;
+}
+
+.bible {
+    font-size: 9vmin;
 }
 
 sup {
