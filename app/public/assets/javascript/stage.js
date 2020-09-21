@@ -9,6 +9,9 @@ theWhole = () => {
 
 // Function to connect to Quelea Lyrics API
 runIt = () => {
+
+    // login();
+
     const queryURL = "rcApi/lyrics";
 
     // Calling Ajax

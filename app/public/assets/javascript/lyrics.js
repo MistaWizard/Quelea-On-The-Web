@@ -1,3 +1,6 @@
+// Create EventSource for the SSE from the Backend
+const evtSource = new EventSource("http://localhost:3000/lowerthirdsserver");
+
 let lyricsText = "";
 
 // Main function that repeats ever 500ms
@@ -5,6 +8,23 @@ theWhole = () => {
     setInterval(() => {
         runIt();
     }, 500);
+};
+
+// // Open the EventListener for the SSE stream
+// evtSource.addEventListener('open', (e) => {
+//     console.log("Stream is Live");
+// }, false);
+
+// // How we are going to handle SSE messages from the backend
+// evtSource.addEventListener('message', (e) => {
+//     console.log('Received a message:', e.data);
+// }, false);
+
+// Listen for SSE messages and format them
+evtSource.onmessage = (e) => {
+    const messageData = e.data;
+
+    console.log("Here be the data: " + messageData);
 };
 
 // Function to connect to Quelea Lyrics API
