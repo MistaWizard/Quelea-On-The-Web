@@ -67,6 +67,7 @@ setInterval(() => {
         else {
             lowerLyrics = newLyrics;
             console.log("Here it is");
+            // sendIt();
             // response.write('data:' + lowerLyrics + '\n\n')
         }
     })
@@ -83,6 +84,10 @@ app.get('/lowerthirdsserver', function (request, response) {
         "content-type": "text/event-stream",
     });
     // const data = "Hello Earl!";
+
+    // sendIt = () => {
+    //     response.write('data:' + lowerLyrics + '\n\n');
+    // };
 
     setInterval(() => {
         response.write('data:' + lowerLyrics + '\n\n');
