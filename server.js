@@ -11,6 +11,8 @@ const lyricUrl = config.lyricsApi + "/lyrics";
 
 let lowerLyrics = "";
 let newLyrics = "";
+let rcLyrics = "";
+let stageLyrics = "";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -54,10 +56,10 @@ axios.get(rcUrl).then(response => {
 //     console.log(error);
 // });
 
-setInterval(() => {
+setInterval( async() => {
 
     // Quelea Lyrics API GET using Axios
-    axios.get(lyricUrl).then(res => {
+    await axios.get(lyricUrl).then(res => {
         // console.log("Here be the Lyrics " + res.data);
         newLyrics = res.data;
         // console.log(newLyrics);
@@ -74,7 +76,26 @@ setInterval(() => {
     .catch(error => {
         console.log(error);
     });
-}, 300);
+
+    // Quelea Lyrics API GET using Axios
+    await axios.get(rcUrl).then(res => {
+        // console.log("Here be the Lyrics " + res.data);
+        rcLyrics = res.data;
+        rcLyrics = rcLyrics.replace(/(\r\n|\n|\r)/gm," ");
+        // console.log(newLyrics);
+        if (rcLyrics === stageLyrics) {
+            console.log("No change is good change for the stage");
+        }
+        else {
+            stageLyrics = rcLyrics;
+            console.log("Here are the stage lyrics");
+            console.log(rcLyrics);
+        }
+    })
+    .catch(error => {
+        console.log(error);
+    });
+}, 250);
 
 // SSE Connection to the Lower Thirds Lyric Front End
 app.get('/lowerthirdsserver', function (request, response) {
@@ -85,18 +106,24 @@ app.get('/lowerthirdsserver', function (request, response) {
     });
     // const data = "Hello Earl!";
 
-    // sendIt = () => {
-    //     response.write('data:' + lowerLyrics + '\n\n');
-    // };
-
     setInterval(() => {
         response.write('data:' + lowerLyrics + '\n\n');
-    }, 300);
+    }, 250);
 
-    // request.on('close', () => {    
-    //     response.end();    
-    //     console.log('Stopped sending events.');  
-    // });
+});
+
+app.get('/stagesserver', function (request, response) {
+    response.status(200).set({
+        "connection": "keep-alive",
+        "cache-control": "no-cache",
+        "content-type": "text/event-stream",
+    });
+    // const data = "Hello Earl!";
+
+    setInterval(() => {
+        response.write('data:' + stageLyrics + '\n\n');
+    }, 250);
+
 });
 
 // Keep server running if connection to an API fails

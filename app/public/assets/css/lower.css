@@ -8,8 +8,9 @@ body {
 
 #container {
     position: absolute;
+    width: 100%;
     bottom: 0;
-    /* vertical-align: bottom; */
+    /* vertical-align: center; */
 }
 
 #liveLyrics {

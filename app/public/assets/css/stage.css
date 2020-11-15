@@ -2,22 +2,22 @@ body {
     text-align: center;
     margin-left: 10%;
     margin-right: 10%;
-    background-color: black;
+    /* background-color: black; */
     height: auto;
     overflow: hidden;
-    font-size: 2vmin;
+    /* font-size: 2vmin; */
 }
 
-#liveLyrics {
+#stageLyrics {
     padding-top: 2%;
     padding-bottom: 2%;
     position: relative;
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    font-size: 5em;
+    font-size: 9vmin;
     letter-spacing: 0.2rem;
-    color: white;
+    color: blue;
     /* transition: opacity 300ms 300ms; */
     /* text-shadow: 
         -3px -3px 0px #000,
@@ -37,6 +37,11 @@ body {
         -3px  0px 0px #000,
         -3px -1px 0px #000; */
     overflow: hidden;
+}
+
+.current {
+    font-size: 10vmin;
+    font-weight: bolder;
 }
 
 .bible {
