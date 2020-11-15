@@ -48,11 +48,13 @@ body {
 }
 
 .lyric {
-    font-size: 11vmin;
+    /* font-size: 11vmin; */
+    font-size: 5vmin;
 }
 
 .bible {
-    font-size: 9vmin;
+    /* font-size: 9vmin; */
+    font-size: 3vmin;
 }
 
 sup {
