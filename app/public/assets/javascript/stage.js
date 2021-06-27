@@ -14,10 +14,10 @@ theWhole = () => {
 evtSource.onmessage = (e) => {
     const messageData = e.data;
 
-    console.log(messageData);
+    // console.log(messageData);
         // Checking if our latest data is the same as what we already have
         if (lyricsText === messageData) {
-            console.log("No change is good change");
+            // console.log("No change is good change");
         }
         // Proceed if data is different than what is currently set
         else {
@@ -44,6 +44,14 @@ evtSource.onmessage = (e) => {
                     lyricsText = messageData;
                     console.log("Here are the lyrics:" + lyricsText);
                     $("#stageLyrics").html(lyricsText);
+                    target_offset = $(".current").offset(),
+                    target_top = target_offset.top;
+                    console.log(target_top, target_offset);
+                    $(window).scrollTop(target_top);
+                    // $("html, body").animate({
+                    //     scrollTo: target_top
+                    // }, 800);
+                    // $(window).scrollTop($('.current').offset().top);
                 }
             }
         }

@@ -1,5 +1,5 @@
 body {
-    text-align: center;
+    text-align: left;
     margin-left: 10%;
     margin-right: 10%;
     margin-top: 0px;
@@ -16,7 +16,7 @@ i {
 #stageLyrics {
     padding-top: 2%;
     padding-bottom: 2%;
-    position: relative;
+    /* position: relative; */
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
@@ -46,17 +46,17 @@ i {
 
 .inner:not(.current) {
     font-style: italic;
-    display: none;
+    /* display: none; */
 }
 
 .current {
     padding: 2% 0 2% 0;
-    font-size: 10vmin;
+    font-size: 12vmin;
     font-weight: bolder;
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
-    z-index: 999;
+    /* z-index: 999; */
     width: 100%;
     height: auto;
 }
