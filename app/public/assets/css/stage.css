@@ -1,9 +1,9 @@
 body {
     text-align: left;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-top: 0px;
-    /* background-color: black; */
+    background-color: black;
     height: auto;
     overflow: hidden;
     /* font-size: 2vmin; */
@@ -22,7 +22,7 @@ i {
     font-weight: normal;
     font-size: 9vmin;
     letter-spacing: 0.2rem;
-    color: blue;
+    color: white;
     /* transition: opacity 300ms 300ms; */
     /* text-shadow: 
         -3px -3px 0px #000,
@@ -60,10 +60,6 @@ i {
     width: 100%;
     height: auto;
 }
-
-/* .inner::before(.current) {
-    display: none;
-} */
 
 .bible {
     padding: 5%;
