@@ -13,14 +13,28 @@ i {
     display: none;
 }
 
+#clock {
+    position: fixed;
+    top: 5%;
+    left: 50%;
+    margin-bottom: 8%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #17D4FE;
+    background-color: black;
+    font-size: 60px;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 7px;
+    border: 4px solid white;
+}
+
 #stageLyrics {
-    padding-top: 2%;
-    padding-bottom: 2%;
-    /* position: relative; */
+    padding-top: 100px;
+    padding-bottom: 50%;
     min-height: 100%;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
-    font-size: 9vmin;
+    /* font-size: 9vmin; */
+    font-size: 3rem;
     letter-spacing: 0.2rem;
     color: white;
     /* transition: opacity 300ms 300ms; */
@@ -47,18 +61,25 @@ i {
 .inner:not(.current) {
     font-style: italic;
     /* display: none; */
+    padding-top: 2%;
+    padding-bottom: 8%;
+}
+
+div.current + .inner ~ .inner {
+    /* color: blue; */
+    display: none;
 }
 
 .current {
-    padding: 2% 0 2% 0;
-    font-size: 12vmin;
+    padding: 1% 2% 1% 2%;
+    /* font-size: 10vmin; */
+    font-size: 4rem;
     font-weight: bolder;
-    /* position: fixed; */
     top: 0;
     left: 0;
-    /* z-index: 999; */
-    width: 100%;
+    width: 95%;
     height: auto;
+    border: 4px solid white;
 }
 
 .bible {
