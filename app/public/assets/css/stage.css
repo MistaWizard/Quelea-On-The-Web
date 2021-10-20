@@ -59,15 +59,15 @@ i {
 }
 
 .inner:not(.current) {
-    font-style: italic;
-    /* display: none; */
-    padding-top: 2%;
-    padding-bottom: 8%;
+    display: none;
 }
 
-div.current + .inner ~ .inner {
-    /* color: blue; */
-    display: none;
+div.current + .inner {
+    font-style: italic;
+    /* display: none; */
+    display: block;
+    padding-top: 2%;
+    padding-bottom: 8%;
 }
 
 .current {
