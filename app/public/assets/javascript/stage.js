@@ -56,6 +56,7 @@ evtSource.onmessage = (e) => {
                     $("#stageLyrics").fadeIn(300, () => {
                         console.log(this);
                     });
+                    getSectionTitles();
                 }
                 // Update #stageLyrics div with newest data
                 else {
@@ -70,10 +71,29 @@ evtSource.onmessage = (e) => {
                     //     scrollTo: target_top
                     // }, 800);
                     // $(window).scrollTop($('.current').offset().top);
+                    getSectionTitles();
                 }
             }
         }
 
+};
+
+
+getSectionTitles = () => {
+    // let sections = document.getElementsByTagName("p");
+    let sections = $("p");
+    let title;
+    let i;
+    for (i = 0; i < sections.length; i++) {
+        title = $(sections[i]).attr("data-type"); 
+        if (title != null) {
+            divTitle = "<div class='title'>" + title + "</div>";
+            newDiv = divTitle + $(sections[i]).html();
+            sections[i].innerHTML = newDiv;
+            // console.log(sections[i].innerHTML);
+        }
+        // console.log(title);
+    } 
 };
 
 // // Function to connect to Quelea Lyrics API
